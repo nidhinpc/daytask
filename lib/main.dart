@@ -1,6 +1,7 @@
 import 'package:daytask/controller/home_screen_controller.dart';
 import 'package:daytask/utils/color_constants.dart';
 import 'package:daytask/view/onboarding_screen/onboarding_screen.dart';
+import 'package:daytask/view/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: OnboardingScreen(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           scaffoldBackgroundColor: ColorConstants.Backgroundcolor,

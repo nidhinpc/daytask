@@ -77,7 +77,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  subtitle: Row(
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         task["details"] ?? "No Details",
@@ -87,26 +88,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                       const SizedBox(width: 10),
-                      // Text(
-                      //   task["time"] ?? "No Time",
-                      //   style: const TextStyle(color: Colors.white),
-                      // ),
-                      // Text(
-                      //   task["date"] ?? "No Date",
-                      //   style: const TextStyle(color: Colors.white),
-                      // ),
-                      Text(
-                        task["date"] != null
-                            ? DateFormat.jm().format(DateTime.parse(
-                                task["date"])) // Format time as 12-hour format
-                            : "No Time",
-                        style: const TextStyle(color: Colors.white),
+                      Row(
+                        children: [
+                          Text(
+                            """Date : ${task["date"] != null ? DateFormat.yMMMd().format(DateTime.parse(task["time"])) // Format date as MMM d, yyyy
+                                : "No Date"}""",
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 10,
                       ),
                       Text(
-                        task["time"] != null
-                            ? DateFormat.yMMMd().format(DateTime.parse(
-                                task["time"])) // Format date as MMM d, yyyy
-                            : "No Date",
+                        """Time : ${task["time"] != null ? DateFormat.jm().format(DateTime.parse(task["date"]))
+                            // Format time as 12-hour format
+                            : "No Time"}""",
                         style: const TextStyle(color: Colors.white),
                       ),
                     ],

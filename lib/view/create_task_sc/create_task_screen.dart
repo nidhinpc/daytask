@@ -120,7 +120,7 @@ class _CreateTaskScreenState extends State<CreateTaskScreen> {
                       minutes: 23,
                     ),
                     maxTime: Time(
-                      hours: 17,
+                      hours: 23,
                     ),
                   ).show(context);
                 },
